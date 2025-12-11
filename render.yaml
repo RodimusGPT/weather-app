@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: weather-app
+    runtime: node
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NEXT_PUBLIC_OPENWEATHER_API_KEY
+        sync: false
+      - key: NODE_ENV
+        value: production
+    autoDeploy: true
